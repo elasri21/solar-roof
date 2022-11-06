@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+:root {
+    /* project Colors */
+    --link-c: #474d75;
+    --dark-blue: #3a50f9;
+    --blue-sky: #38c0e7;
+    --green: #3dd2ae;
+    /*old colors*/
+    --main-color: #333;
+    --yellow: #ffc800;
+    --orange: #fba61b;
+    --pink: #ee4dc6;
+    --red: #fe4323;
+    --soft-red:#ffbea7;
+    --violet: #835fa8;
+    --black: #111;
+    --text-c: #555c66;
+    --bg-footer: #333;
+    --light-text: #808080;
+    --main-bg: #e5e5e5;/* icon bg */
+    --shadow: rgb(0 0 0 / 20%);
+    --input-border: #d9d9d9;
+    --link-bg: #b9c1cc;
+    --dark-grayish: #414c62;
+    --olive: #c4b35d;
+}
+/* global rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    margin: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+}
+@media (min-width: 922px) {
+    .container {
+        margin-left: 100px !important;
+        margin-right: 100px !important;
+    }
+}
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+/* start header */
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 111;
+    height: 74px;
+}
+header form input {
+    border: 1px solid white;
+}
+header .search input::placeholder {
+    color: var(--input-border);
+}
+header .search i {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+}
+@media (max-width: 767px) {
+    header nav {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-footer);
+        padding: 30px;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        flex-basis: 100%;
+    }
+    header nav ul li a {
+        color: white !important;
+    }
+    header nav .close {
+        display: block !important;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+header nav ul li a {
+    color: var(--footer-bg);
+}
+header nav ul li a:hover {
+    color: var(--light-text);
+}
+header nav .close {
+    color: white;
+    display: none;
+}
+@media (max-width: 767px) {
+    header .open {
+        display: block !important;
+    }
+}
+header .open {
+    display: none;
+}
+/* end header */
+
+/* start landing*/
+.landing {
+    height: calc(100vh - 74px);
+    background-image: url("../images/landing.jpg");
+}
+/* end landing *
+
+/* working */
+/* @media (min-width: 922px) {
+    .working .container {
+        text-align: center;
+    }
+} */
+.working .container {
+    top: -150px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+/* working */
+
+/* clean-energy */
+.clean-energy::before {
+    content: "";
+    width: 40%;
+    height: 100%;
+    background-color: var(--olive);
+    position: absolute;
+    right: 0;
+}
+.clean-energy .container .info {
+    max-width: 600px;
+    bottom: 0;
+    left: 0;
+}
+.clean-energy .container .info a:hover {
+    background-color: white;
+    color: var(--olive);
+}
+/* clean-energy */
+
+/* letters */
+.letters .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.letters .container .box a:hover {
+    border-bottom: none;
+    opacity: .9;
+}
+/* letters */
+
+/* residential */
+@media (min-width: 922px) {
+    .residential {
+        background-image: url("../images/house.jpg");
+        background-repeat: no-repeat;
+        background-size: 50% 100%;
+    }
+}
+.residential .container .boxes {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+/* residential */
+/* solar-panel */
+.solar-panel {
+    height: calc(100vh - 74px);
+    background-image: url("../images/panel.jpg");
+}
+.solar-panel .info {
+    max-width: 500px;
+    bottom: 0;
+    left: 0;
+}
+.solar-panel .info a:hover {
+    border-color: white;
+    color: white;
+    background-color: var(--olive);
+} 
+/* solar-panel */
+
+/* about */
+.about .container .boxes {
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+}
+/* about */
+
+/* contact */
+.contact .container .contact-us:hover {
+    color: white;
+    border-color: white;
+    background-color: var(--olive);
+}
+.contact .team .container {
+    top: -150px;
+}
+.contact .team .boxes {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.contact .team .boxes .box i:hover {
+    color: var(--olive);
+}
+@media (min-width: 768px) {
+    .contact .form-container .container > div {
+        width: calc(50% - 15px);
+    }
+    .contact .form-container .container > form {
+        width: calc(50% - 15px);
+    }
+}
+.contact .form-container .container  form .check {
+    appearance: none;
+}
+.contact .form-container .container  form .check + label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--olive);
+    position: absolute;
+    left: -30px;
+    top: -3px;
+    transition: .3s;
+}
+.contact .form-container .container  form .check:checked + label::before {
+    background-color: var(--olive);
+}
+.contact .form-container .container  form .check + label::after {
+    content: "\f00c";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    left: -26px;
+    top: 0;
+    color: white;
+}
+.contact .form-container .container  form .field:focus::placeholder {
+    opacity: 0;
+}
+.contact .form-container .container  form .submit:hover {
+    background-color: white;
+    color: var(--olive);
+}
+/* contact */
+
+/* start footer */
+footer .text {
+    max-width: 500px;
+}
+footer a:hover {
+    color: var(--dark-blue);
+    text-decoration: underline;
+}
+/* end footer */
